@@ -57,13 +57,6 @@ namespace RESTDemo.MVVM.ViewModels
             var json = JsonSerializer.Serialize(user, _serializerOptions);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
             var response = await _client.PostAsync($"{_baseUrl}/users", content);
-            //if (response.IsSuccessStatusCode)
-            //{
-            //    using (var responseStream = await response.Content.ReadAsStreamAsync())
-            //    {
-            //        var data = await JsonSerializer.DeserializeAsync<User>(responseStream, _serializerOptions);
-            //    }
-            //}
         });
     }
 }
